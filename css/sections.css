@@ -1,0 +1,784 @@
+/* ============================================
+   42 UNIQUE SECTION LAYOUTS — Sentinel Security
+   ============================================ */
+
+/* --- LAYOUT 01: Hero Full-Screen Parallax --- */
+/* Uses existing .hero class */
+
+/* --- LAYOUT 02: Asymmetric 3-Col Mosaic --- */
+.mosaic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+.mosaic-card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.mosaic-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.mosaic-card:nth-child(1) { margin-top: 2rem; }
+.mosaic-card:nth-child(3) { margin-top: 4rem; }
+.mosaic-card img { width: 100%; height: 220px; object-fit: cover; }
+.mosaic-card-body { padding: 2rem; }
+
+/* --- LAYOUT 03: Image-Left + Text-Right Split (distinct from grid-2 split) --- */
+.split-left-img {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* --- LAYOUT 04: Horizontal Numbered Timeline --- */
+.timeline-h {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.timeline-h::before {
+  content: '';
+  position: absolute;
+  top: 32px;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: var(--border-color);
+  z-index: 0;
+}
+.timeline-step {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 1rem;
+}
+.timeline-num {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; font-weight: 700;
+  margin: 0 auto 1.5rem;
+  border: 4px solid var(--bg-color);
+  box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+/* --- LAYOUT 05: Image-Right + Stat Bars (distinct from grid-2 reversed) --- */
+.split-right-stats {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* --- LAYOUT 06: Centered Form Card --- */
+/* Uses existing form styles */
+
+/* --- LAYOUT 07: Hero Split 50/50 --- */
+.hero-split {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: var(--nav-height-desktop);
+}
+.hero-split-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+  background: var(--bg-color);
+}
+.hero-split-text h1 { color: var(--text-primary); }
+.hero-split-text p { color: var(--text-secondary); font-size: 1.25rem; }
+.hero-split-img {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.hero-split-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--bg-color) 0%, transparent 30%);
+}
+
+/* --- LAYOUT 08: Overlap Image Card --- */
+.overlap-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: center;
+  position: relative;
+}
+.overlap-text { padding: 4rem; z-index: 2; }
+.overlap-img {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  margin: -2rem;
+  z-index: 1;
+}
+.overlap-img img { width: 100%; height: 500px; object-fit: cover; display: block; }
+
+/* --- LAYOUT 09: Icon Feature Strip --- */
+/* Uses existing grid-4 + card */
+
+/* --- LAYOUT 10: Stats Counter Row --- */
+/* Uses existing stats-grid */
+
+/* --- LAYOUT 11: 2-Col Testimonials --- */
+/* Uses existing review-card */
+
+/* --- LAYOUT 12: Phone Mockup CTA --- */
+.phone-mockup-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.phone-frame {
+  width: 280px; height: 560px;
+  background: var(--bg-color);
+  border: 6px solid var(--text-muted);
+  border-radius: 36px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg), inset 0 0 20px rgba(0,0,0,0.1);
+  position: relative;
+}
+.phone-frame img { width: 100%; height: 100%; object-fit: cover; }
+.phone-notch {
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 120px; height: 28px;
+  background: var(--text-muted);
+  border-radius: 0 0 16px 16px;
+}
+
+/* --- LAYOUT 13: Hero Centered Overlay --- */
+/* Uses existing .hero class */
+
+/* --- LAYOUT 14: 4-Col Icon Cards --- */
+/* Uses existing grid-4 + card */
+
+/* --- LAYOUT 15: Rounded Container Split --- */
+.rounded-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: var(--surface-color-alt);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+.rounded-split-text { padding: 4rem; display: flex; flex-direction: column; justify-content: center; }
+.rounded-split-img img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 450px; }
+
+/* --- LAYOUT 16: Reversed Rounded Split --- */
+.rounded-split.reversed { direction: rtl; }
+.rounded-split.reversed > * { direction: ltr; }
+
+/* --- LAYOUT 17: 2-Col Pricing Cards --- */
+/* Uses existing grid-2 + card */
+
+/* --- LAYOUT 18: Full-Width CTA Banner --- */
+.cta-banner {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.cta-banner h2 { margin-bottom: 1rem; }
+.cta-banner p { margin-bottom: 2rem; }
+.cta-banner .btn { padding: 1rem 3rem; font-size: 1.125rem; }
+
+/* --- LAYOUT 19: Hero with floating badge --- */
+.hero-badge {
+  display: inline-block;
+  background: rgba(15, 98, 254, 0.2);
+  border: 1px solid rgba(15, 98, 254, 0.4);
+  color: #7EB8FF;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(8px);
+}
+
+/* --- LAYOUT 20: 4-Col Pricing with featured --- */
+/* Uses existing grid-4 + card (with .featured class) */
+.card.featured {
+  border-color: var(--primary-color);
+  position: relative;
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(15, 98, 254, 0.15);
+}
+.featured-badge {
+  position: absolute;
+  top: -14px; left: 50%; transform: translateX(-50%);
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.35rem 1.25rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* --- LAYOUT 21: Comparison Table --- */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+.compare-table th,
+.compare-table td {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+}
+.compare-table th {
+  background: var(--surface-color-alt);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.compare-table .check-mark { fill: var(--primary-color); width: 22px; height: 22px; }
+
+/* --- LAYOUT 22: Mini Add-on Cards --- */
+.addon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.addon-card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: var(--transition);
+}
+.addon-card:hover { border-color: var(--primary-color); transform: translateY(-3px); }
+.addon-price {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin: 0.75rem 0;
+}
+
+/* --- LAYOUT 23: Icon-Left + Text-Right Finance --- */
+.finance-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.finance-icon-box {
+  background: var(--surface-color);
+  border-radius: 20px;
+  padding: 4rem;
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+.finance-icon-box svg { width: 80px; fill: var(--primary-color); margin-bottom: 1.5rem; }
+
+/* --- LAYOUT 24: Centered CTA --- */
+/* .cta-banner covers this */
+
+/* --- LAYOUT 25: Hero Diagonal Split --- */
+.hero-diagonal {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--nav-height-desktop) + 4rem) 2rem 4rem;
+  overflow: hidden;
+}
+.hero-diagonal-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 35% 100%);
+}
+.hero-diagonal-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--bg-color) 45%, transparent 55%);
+  z-index: 1;
+}
+.hero-diagonal-content {
+  position: relative;
+  z-index: 2;
+  max-width: 550px;
+}
+.hero-diagonal h1 { color: var(--text-primary); }
+.hero-diagonal p { color: var(--text-secondary); font-size: 1.25rem; }
+
+/* --- LAYOUT 26: Featured Article Large --- */
+.featured-article {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 4rem;
+  align-items: center;
+}
+.featured-article-img {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.featured-article-img img { width: 100%; height: 450px; object-fit: cover; display: block; }
+.featured-tag {
+  position: absolute;
+  top: 1.5rem; left: 1.5rem;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.35rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.article-meta {
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* --- LAYOUT 27: 3-Col Blog Cards --- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.blog-card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.blog-card img { width: 100%; height: 220px; object-fit: cover; }
+.blog-card-body { padding: 1.75rem; }
+.blog-category {
+  display: inline-block;
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+/* --- LAYOUT 28: 2-Col Video Overlays --- */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.video-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.video-card img { width: 100%; height: 360px; object-fit: cover; display: block; }
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: background 0.3s;
+}
+.video-card:hover .video-overlay { background: rgba(0,0,0,0.7); }
+.play-icon {
+  width: 72px; height: 72px;
+  fill: #fff;
+  transition: transform 0.3s;
+}
+.video-card:hover .play-icon { transform: scale(1.15); }
+.video-title { color: #fff; margin-top: 1rem; font-size: 1.25rem; font-weight: 600; }
+
+/* --- LAYOUT 29: Centered Newsletter --- */
+.newsletter-box {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto;
+}
+.newsletter-form {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.newsletter-form input { flex: 1; }
+
+/* --- LAYOUT 30: Checklist Download Split --- */
+.checklist-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.checklist-icon-box {
+  background: var(--surface-color);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+  border: 1px solid var(--border-color);
+}
+.checklist-icon-box svg { width: 140px; fill: var(--primary-color); }
+
+/* --- LAYOUT 31: Hero Text Overlay --- */
+/* Uses existing .hero */
+
+/* --- LAYOUT 32: Story Split (image right, text left) --- */
+.story-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.story-img {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.story-img img { width: 100%; height: 480px; object-fit: cover; display: block; }
+.story-img::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+}
+
+/* --- LAYOUT 33: 4-Col Centered Values --- */
+/* Uses existing grid-4 + card (centered variant) */
+
+/* --- LAYOUT 34: Team Grid Circles --- */
+/* Uses existing .team-card */
+
+/* --- LAYOUT 35: Certification Logo Strip --- */
+.cert-strip {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  opacity: 0.75;
+}
+.cert-item {
+  font-family: 'Georgia', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+/* --- LAYOUT 36: Centered CTA --- */
+/* covered by .cta-banner */
+
+/* --- LAYOUT 37: Hero Radial Gradient --- */
+.hero-radial::before {
+  background: radial-gradient(ellipse at center, rgba(11,15,25,0.5) 0%, rgba(11,15,25,0.9) 70%) !important;
+}
+
+/* --- LAYOUT 38: 4-Col Contact Cards --- */
+/* Uses existing grid-4 + card */
+
+/* --- LAYOUT 39: Form + Map Split --- */
+/* Uses existing split styles */
+
+/* --- LAYOUT 40: Accordion FAQ --- */
+.faq-list { max-width: 800px; margin: 0 auto; }
+.faq-item {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.75rem 0;
+}
+.faq-question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-question svg { width: 24px; height: 24px; fill: var(--text-muted); transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.open .faq-question svg { transform: rotate(180deg); }
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  color: var(--text-secondary);
+}
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding-top: 1rem;
+}
+
+/* --- LAYOUT 41: 4-Col Location Cards --- */
+/* Uses existing grid-4 + card */
+
+/* --- LAYOUT 42: Gradient Banner CTA --- */
+.gradient-banner {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #0353E9 50%, #6366F1 100%);
+  padding: 5rem 3rem;
+  border-radius: 24px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.gradient-banner::before {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  top: -200px; right: -100px;
+}
+.gradient-banner h2 { color: #fff; }
+.gradient-banner p { color: rgba(255,255,255,0.9); font-size: 1.25rem; }
+.gradient-banner .btn { background: #fff; color: var(--primary-color); font-size: 1.2rem; padding: 1rem 3rem; }
+.gradient-banner .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+
+/* --- LAYOUT 24: Boxed Border CTA --- */
+.cta-boxed {
+  border: 2px dashed var(--border-color);
+  border-radius: 24px;
+  padding: 5rem 3rem;
+  text-align: center;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(15, 98, 254, 0.03) 10px,
+    rgba(15, 98, 254, 0.03) 20px
+  );
+}
+
+/* --- LAYOUT 36: Image + Floating Card CTA --- */
+.career-cta {
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 4rem 10%;
+  border-radius: 24px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+.career-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, var(--bg-color) 80%);
+}
+.career-cta-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(11, 15, 25, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 4rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* --- LAYOUT 39: Form Overlay on Background --- */
+.form-overlay-section {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  padding: 4rem 10%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.form-overlay-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--bg-color) 0%, rgba(11, 15, 25, 0.2) 100%);
+}
+.form-overlay-card {
+  position: relative;
+  z-index: 2;
+  background: var(--surface-color);
+  padding: 3.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  max-width: 500px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+}
+
+/* --- LAYOUT 29: Staggered Checklist Split --- */
+.checklist-staggered {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 2rem 0;
+}
+.checklist-staggered-img {
+  position: relative;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+.checklist-staggered-img img {
+  width: 100%;
+  border-radius: 20px;
+  position: relative;
+  z-index: 2;
+  box-shadow: var(--shadow-lg);
+}
+.checklist-staggered-img::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  height: 80%;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--primary-color),
+    var(--primary-color) 2px,
+    transparent 2px,
+    transparent 10px
+  );
+  border-radius: 20px;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* --- LAYOUT 42: Emergency CTA Box --- */
+.emergency-cta {
+  background: var(--surface-color);
+  border-radius: 24px;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(220, 38, 38, 0.05);
+}
+.emergency-cta::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: #DC2626;
+}
+.emergency-cta-content { max-width: 600px; }
+.emergency-cta-content h2 { color: #DC2626; margin-bottom: 1rem; }
+.emergency-cta-icon {
+  background: rgba(220, 38, 38, 0.1);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.emergency-cta-icon svg { width: 50px; fill: #DC2626; }
+
+/* --- LAYOUT 25: Hero Diagonal (Centered with Background) --- */
+.hero-diagonal {
+  position: relative;
+  padding: 10rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 50vh;
+  overflow: hidden;
+}
+.hero-diagonal-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+.hero-diagonal-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(11, 15, 25, 0.9) 0%, rgba(11, 15, 25, 0.7) 100%);
+  z-index: 1;
+}
+.hero-diagonal-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+.hero-diagonal-content h1 {
+  font-size: 4rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+.hero-diagonal-content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  .mosaic-grid, .blog-grid, .addon-grid { grid-template-columns: repeat(2, 1fr); }
+  .mosaic-card:nth-child(1), .mosaic-card:nth-child(3) { margin-top: 0; }
+  .timeline-h { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .timeline-h::before { display: none; }
+}
+
+@media (max-width: 768px) {
+  .hero-split { grid-template-columns: 1fr; }
+  .hero-split-img { min-height: 300px; }
+  .hero-split-img::after { background: linear-gradient(180deg, var(--bg-color) 0%, transparent 30%); }
+  .hero-diagonal-bg { clip-path: none; opacity: 0.3; }
+  .hero-diagonal-overlay { background: var(--bg-color); opacity: 0.85; }
+  .split-left-img, .split-right-stats, .overlap-section, .phone-mockup-section,
+  .rounded-split, .finance-split, .featured-article, .video-grid,
+  .checklist-split, .story-split { grid-template-columns: 1fr; }
+  .overlap-img { margin: 0; }
+  .mosaic-grid, .blog-grid, .addon-grid, .timeline-h { grid-template-columns: 1fr; }
+  .newsletter-form { flex-direction: column; }
+  .cert-strip { gap: 2rem; }
+  .career-cta::before { background: rgba(0,0,0,0.6); }
+  .career-cta-content { max-width: 100%; margin-top: 2rem; padding: 2rem; }
+  .career-cta { justify-content: center; padding: 2rem; }
+  .form-overlay-section::before { background: rgba(11, 15, 25, 0.85); }
+  .form-overlay-card { max-width: 100%; padding: 2.5rem; }
+  .form-overlay-section { padding: 2rem; justify-content: center; }
+  .checklist-staggered { grid-template-columns: 1fr; gap: 2rem; }
+  .checklist-staggered-img { padding: 0; margin-top: 2rem; }
+  .checklist-staggered-img::before { display: none; }
+  .emergency-cta { flex-direction: column-reverse; text-align: center; gap: 2rem; padding: 2.5rem; }
+  .emergency-cta::before { top: 0; left: 0; right: 0; height: 6px; width: 100%; }
+  .hero-diagonal { padding: 6rem 1.5rem; }
+  .hero-diagonal-content h1 { font-size: 2.5rem; }
+}
