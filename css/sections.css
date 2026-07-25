@@ -67,6 +67,9 @@
   border: 4px solid var(--bg-color);
   box-shadow: 0 0 0 3px var(--primary-color);
 }
+[dir="rtl"] .timeline-num {
+  direction: ltr;
+}
 
 /* --- LAYOUT 05: Image-Right + Stat Bars (distinct from grid-2 reversed) --- */
 .split-right-stats {
@@ -106,6 +109,9 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(90deg, var(--bg-color) 0%, transparent 30%);
+}
+[dir="rtl"] .hero-split-img::after {
+  background: linear-gradient(270deg, var(--bg-color) 0%, transparent 30%);
 }
 
 /* --- LAYOUT 08: Overlap Image Card --- */
@@ -307,11 +313,17 @@
   background-position: center;
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 35% 100%);
 }
+[dir="rtl"] .hero-diagonal-bg {
+  clip-path: polygon(0 0, 50% 0, 65% 100%, 0 100%);
+}
 .hero-diagonal-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, var(--bg-color) 45%, transparent 55%);
   z-index: 1;
+}
+[dir="rtl"] .hero-diagonal-overlay {
+  background: linear-gradient(225deg, var(--bg-color) 45%, transparent 55%);
 }
 .hero-diagonal-content {
   position: relative;
@@ -343,6 +355,9 @@
   border-radius: 6px;
   font-weight: 600;
   font-size: 0.875rem;
+}
+[dir="rtl"] .featured-tag {
+  left: auto; right: 1.5rem;
 }
 .article-meta {
   color: var(--primary-color);
@@ -589,6 +604,9 @@
   inset: 0;
   background: linear-gradient(90deg, transparent 0%, var(--bg-color) 80%);
 }
+[dir="rtl"] .career-cta::before {
+  background: linear-gradient(270deg, transparent 0%, var(--bg-color) 80%);
+}
 .career-cta-content {
   position: relative;
   z-index: 2;
@@ -620,6 +638,9 @@
   inset: 0;
   background: linear-gradient(90deg, var(--bg-color) 0%, rgba(11, 15, 25, 0.2) 100%);
 }
+[dir="rtl"] .form-overlay-section::before {
+  background: linear-gradient(270deg, var(--bg-color) 0%, rgba(11, 15, 25, 0.2) 100%);
+}
 .form-overlay-card {
   position: relative;
   z-index: 2;
@@ -644,6 +665,10 @@
   position: relative;
   padding-right: 2rem;
   padding-bottom: 2rem;
+}
+[dir="rtl"] .checklist-staggered-img {
+  padding-right: 0;
+  padding-left: 2rem;
 }
 .checklist-staggered-img img {
   width: 100%;
@@ -670,6 +695,10 @@
   z-index: 1;
   opacity: 0.3;
 }
+[dir="rtl"] .checklist-staggered-img::before {
+  right: auto;
+  left: 0;
+}
 
 /* --- LAYOUT 42: Emergency CTA Box --- */
 .emergency-cta {
@@ -692,6 +721,10 @@
   bottom: 0;
   width: 6px;
   background: #DC2626;
+}
+[dir="rtl"] .emergency-cta::before {
+  left: auto;
+  right: 0;
 }
 .emergency-cta-content { max-width: 600px; }
 .emergency-cta-content h2 { color: #DC2626; margin-bottom: 1rem; }
