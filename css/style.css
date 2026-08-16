@@ -250,12 +250,11 @@ ul {
     display: flex;
     gap: 0.4rem;
     align-items: center;
-    margin-left: 0.5rem;
+    margin-left: 0;
     flex-shrink: 0;
   }
   [dir="rtl"] .nav-controls {
-    margin-left: 0;
-    margin-right: 0.5rem;
+    margin-right: 0;
   }
 }
 
