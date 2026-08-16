@@ -248,7 +248,7 @@ ul {
 @media (min-width: 993px) {
   .nav-controls {
     display: flex;
-    gap: clamp(0.4rem, 0.8vw, 1rem);
+    gap: 0.4rem;
     align-items: center;
     margin-left: auto;
     flex-shrink: 0;
@@ -365,7 +365,7 @@ ul {
 .nav-controls {
   display: flex;
   align-items: center;
-  gap: clamp(0.4rem, 0.8vw, 1rem);
+  gap: 0.4rem;
 }
 
 .toggle-btn {
