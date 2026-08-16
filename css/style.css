@@ -222,41 +222,46 @@ ul {
   display: flex;
   align-items: center;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
   color: var(--text-primary) !important;
   gap: 0.75rem;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .logo svg {
-  width: 32px;
-  height: 32px;
+  width: clamp(26px, 2.2vw, 32px);
+  height: clamp(26px, 2.2vw, 32px);
   fill: var(--primary-color);
+  flex-shrink: 0;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(0.4rem, 1.5vw, 2rem);
   flex: 1;
   justify-content: center;
+  min-width: 0;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 993px) {
   .nav-controls {
-    position: absolute;
-    right: 0;
     display: flex;
-    gap: 1rem;
+    gap: clamp(0.4rem, 0.8vw, 1rem);
     align-items: center;
+    margin-left: auto;
+    flex-shrink: 0;
   }
   [dir="rtl"] .nav-controls {
-    right: auto;
-    left: 0;
+    margin-left: 0;
+    margin-right: auto;
   }
 }
 
 .nav-item {
   position: relative;
+  flex-shrink: 0;
 }
 
 .nav-link {
@@ -265,7 +270,9 @@ ul {
   display: flex;
   align-items: center;
   height: var(--nav-height-desktop); /* #9 Standardize sizes */
-  padding: 0 0.5rem;
+  padding: 0 clamp(0.25rem, 0.5vw, 0.5rem);
+  font-size: clamp(0.85rem, 1.05vw, 1rem);
+  white-space: nowrap;
 }
 
 /* #18 Active link highlight */
@@ -358,21 +365,22 @@ ul {
 .nav-controls {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: clamp(0.4rem, 0.8vw, 1rem);
 }
 
 .toggle-btn {
   background: transparent;
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  width: 40px;
-  height: 40px;
+  width: clamp(32px, 2.5vw, 40px);
+  height: clamp(32px, 2.5vw, 40px);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: var(--transition);
+  flex-shrink: 0;
 }
 
 .toggle-btn:hover {
@@ -380,8 +388,8 @@ ul {
 }
 
 .toggle-btn svg {
-  width: 18px;
-  height: 18px;
+  width: clamp(15px, 1.2vw, 18px);
+  height: clamp(15px, 1.2vw, 18px);
   fill: currentColor;
 }
 
@@ -389,12 +397,15 @@ ul {
   background: transparent;
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  padding: 0 1rem;
-  height: 40px;
+  padding: 0 clamp(0.5rem, 0.8vw, 1rem);
+  height: clamp(32px, 2.5vw, 40px);
   border-radius: 20px;
   font-weight: 600;
+  font-size: clamp(0.75rem, 0.85vw, 0.9rem);
   cursor: pointer;
   transition: var(--transition);
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 .toggle-text-btn:hover {
   background: var(--surface-color-alt);
