@@ -239,9 +239,9 @@ ul {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: clamp(0.4rem, 1.5vw, 2rem);
+  gap: clamp(0.4rem, 1.2vw, 1.5rem);
   flex: 1;
-  justify-content: center;
+  justify-content: flex-end;
   min-width: 0;
 }
 
@@ -250,12 +250,12 @@ ul {
     display: flex;
     gap: 0.4rem;
     align-items: center;
-    margin-left: auto;
+    margin-left: 1rem;
     flex-shrink: 0;
   }
   [dir="rtl"] .nav-controls {
     margin-left: 0;
-    margin-right: auto;
+    margin-right: 1rem;
   }
 }
 
