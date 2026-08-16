@@ -212,7 +212,8 @@ ul {
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 3rem);
   align-items: center;
   width: 100%;
   position: relative;
@@ -240,7 +241,6 @@ ul {
   display: flex;
   align-items: center;
   gap: clamp(0.3rem, 1vw, 1.2rem);
-  flex: 1;
   justify-content: center;
   min-width: 0;
 }
